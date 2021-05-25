@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Notion TOC Floating
-// @namespace    https://github.com/gefangshuai
+// @namespace    https://github.com/gefangshuai/tampermokey-scripts
 // @version      0.1.1
 // @description  mark your toc floating! 默认取第一个table of contents，请知晓。
 // @author       Timothy.Ge
