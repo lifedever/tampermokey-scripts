@@ -42,7 +42,7 @@ GM_addStyle(`
                                 if (rect.top <= 60) {
                                     dom.style.position = 'fixed';
                                     dom.style.top = '60px';
-                                    dom.style.width = rect.width + 'px'
+                                    dom.style.width = rect.width + 'px';
                                 } else {
                                     dom.style.position = null;
                                     dom.style.top = null;
@@ -64,7 +64,7 @@ GM_addStyle(`
                                     }
                                 }
                             }
-                            var allA = tableContents.querySelectorAll('a')
+                            var allA = tableContents.querySelectorAll('a');
                             if (allA && allA.length > 0) {
                                 if (current) {
                                     if (allA.length > 0) {
@@ -76,7 +76,7 @@ GM_addStyle(`
                                             }
                                         }
                                     }
-                                }else{
+                                } else {
                                     for (let i = 0; i < allA.length; i++) {
                                         allA[i].style.background = 'unset';
                                     }
