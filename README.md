@@ -11,7 +11,7 @@ tampermokey-scripts
 ## 效果预览
 
 悬浮目录
-![floating-toc]('https://raw.githubusercontent.com/gefangshuai/tampermokey-scripts/main/imgs/floating-toc.gif')
+![floating-toc](./imgs/floating-toc.gif)
 
 悬浮标题
-![floating-heading]('https://raw.githubusercontent.com/gefangshuai/tampermokey-scripts/main/imgs/floating-heading.gif')
+![floating-heading](./imgs/floating-heading.gif)
