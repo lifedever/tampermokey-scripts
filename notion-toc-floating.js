@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Notion TOC Floating | Notion 悬浮目录
+// @name         Notion TOC Floating | 悬浮目录 | 悬浮Heading
 // @namespace    https://github.com/gefangshuai/tampermokey-scripts
 // @version      0.1.3
-// @description  mark your toc floating! 默认取第一个table of contents，请知晓。
+// @description  默认取第一个table of contents，请知晓。支持悬浮目录和悬浮Heading！
 // @author       Timothy.Ge
 // @include      *://*.notion.so/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
