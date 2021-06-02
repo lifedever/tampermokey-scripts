@@ -9,7 +9,9 @@ tampermokey-scripts
 - 悬浮标题（一级、二级、三级）。文章包含`table_of_contents`时此功能默认失效，避免点击目录跳转出现问题
 
 ## 效果预览
-悬浮目录
 
-![floating-toc]('./imgs/floating-toc.gif')
-![floating-heading]('./imgs/floating-heading.gif')
+悬浮目录
+![floating-toc]('https://raw.githubusercontent.com/gefangshuai/tampermokey-scripts/main/imgs/floating-toc.gif')
+
+悬浮标题
+![floating-heading]('https://raw.githubusercontent.com/gefangshuai/tampermokey-scripts/main/imgs/floating-heading.gif')
