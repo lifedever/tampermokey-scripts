@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         Notion TOC Floating | 悬浮目录 | 悬浮Heading
 // @namespace    https://github.com/gefangshuai/tampermokey-scripts
-// @version      0.1.4
+// @version      0.1.5
 // @description  默认取第一个table of contents，请知晓。支持悬浮目录和悬浮Heading！
 // @author       Timothy.Ge
 // @include      *://*.notion.so/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        GM_addStyle
+// @note         21-06-02 0.1.5 优化Sticky Heading逻辑，当页面包含多列的时候，禁用悬浮
 // @note         21-06-02 0.1.4 优化了悬浮逻辑，增加了table_of_contents激活效果
 // @note         21-06-02 0.1.3 新增了对h1、h2、h3的悬浮支持
 // @note         21-05-25 0.1.2 更新说明
@@ -19,12 +20,16 @@ GM_addStyle(`
         position: sticky !important;
         top: 0;
         background: #fff;
+        z-index: 9999;
     }
 `);
 (function() {
     (function(history) {
         'use strict';
         // Your code here...
+        var preventHeadingSticky = function() {
+            document.querySelector('div.notion-frame').classList.add('prevent-heading-sticky');
+        };
         var doSomething = function() {
             // float TOC
             var scroller = document.querySelector('div.notion-frame .notion-scroller');
@@ -36,7 +41,7 @@ GM_addStyle(`
                         // float table_of_contents
                         var tableContents = document.querySelector('div.notion-page-content .notion-table_of_contents-block');
                         if (tableContents) {
-                            document.querySelector('div.notion-frame').classList.add('prevent-heading-sticky');
+                            preventHeadingSticky();
                             var rect = tableContents.getBoundingClientRect();
                             var dom = tableContents.firstChild;
                             if (dom) {
@@ -49,6 +54,8 @@ GM_addStyle(`
                                     dom.style.top = null;
                                 }
                             }
+                        } else if (document.querySelectorAll('div.notion-page-content .notion-column-block').length > 0) {
+                            preventHeadingSticky();
                         } else {
                             document.querySelector('div.notion-frame').classList.remove('prevent-heading-sticky');
                         }
