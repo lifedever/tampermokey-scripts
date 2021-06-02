@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         Notion TOC Floating | Notion 悬浮目录
 // @namespace    https://github.com/gefangshuai/tampermokey-scripts
-// @version      0.1.2
+// @version      0.1.3
 // @description  mark your toc floating! 默认取第一个table of contents，请知晓。
 // @author       Timothy.Ge
 // @include      *://*.notion.so/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        GM_addStyle
+// @note         21-05-25 0.1.3 新增了对h1、h2、h3的悬浮支持
 // @note         21-05-25 0.1.2 更新说明
 // @note         21-05-25 0.1.1 解决了更换文章失效的问题
 // @note         21-05-25 0.1.0 第一个测试版本
