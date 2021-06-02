@@ -6,17 +6,24 @@
 // @author       Timothy.Ge
 // @include      *://*.notion.so/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
-// @grant        none
+// @grant        GM_addStyle
 // @note         21-05-25 0.1.2 更新说明
 // @note         21-05-25 0.1.1 解决了更换文章失效的问题
 // @note         21-05-25 0.1.0 第一个测试版本
 // ==/UserScript==
-
+GM_addStyle ( `
+    div.notion-page-content .notion-header-block, div.notion-page-content .notion-sub_header-block {
+        position: sticky !important;
+        top: 0;
+        background: #fff;
+    }
+` );
 (function() {
     (function(history) {
         'use strict';
         // Your code here...
         var doSomething = function() {
+            // float TOC
             var scroller = document.querySelector('div.notion-frame .notion-scroller');
             var scrollWatchFun = function(e) {
                 var tableContents = document.querySelector('.notion-table_of_contents-block');
@@ -48,8 +55,6 @@
             setTimeout(function() {
                 doSomething();
             }, 1000);
-            // ... whatever else you want to do
-            // maybe call onhashchange e.handler
             return pushState.apply(history, arguments);
         };
     })(window.history);
