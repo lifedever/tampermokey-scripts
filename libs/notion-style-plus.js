@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Notion Style Plus | 重定义Notion样式：Quota
 // @namespace    https://github.com/gefangshuai/tampermokey-scripts
-// @version      1.0.1
+// @version      1.0.2
 // @author       Timothy.Ge
 // @include      *://*.notion.so/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
