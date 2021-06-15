@@ -23,3 +23,8 @@ tampermokey-scripts
 
 悬浮标题
 ![floating-heading](./imgs/floating-heading.gif)
+
+# notion 样式重定义插件：notion-style-plus.js
+
+- 重定义quota: 字体变为常规字体，不再放大
+  ![floating-heading](./imgs/quota.jpg)
