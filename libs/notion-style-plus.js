@@ -21,4 +21,4 @@
         font-size: 1em !important;
     }
 `);
-})
+})()
