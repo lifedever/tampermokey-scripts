@@ -6,6 +6,7 @@
 // @include      *://*.notion.so/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        GM_addStyle
+// @note         21-06-15 1.0.2 fix bugs
 // @note         21-06-15 1.0.1 修改Quote样式
 // @note         21-06-15 1.0.0 修改Quote样式
 // ==/UserScript==
