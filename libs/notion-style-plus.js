@@ -16,6 +16,3 @@ GM_addStyle(`
         font-size: 1em !important;
     }
 `);
-(function() {
-
-})();
