@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         Notion TOC Floating | 悬浮目录 | 悬浮Heading
 // @namespace    https://github.com/gefangshuai/tampermokey-scripts
-// @version      0.1.5
+// @version      0.1.6
 // @description  默认取第一个table of contents，请知晓。支持悬浮目录和悬浮Heading！
 // @author       Timothy.Ge
-// @include      *://*.notion.so/*
+// @include      *://*.notion.*/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        GM_addStyle
+// @note         21-08-11 0.1.16 兼容新站点
 // @note         21-06-02 0.1.5 优化Sticky Heading逻辑，当页面包含多列的时候，禁用悬浮
 // @note         21-06-02 0.1.4 优化了悬浮逻辑，增加了table_of_contents激活效果
 // @note         21-06-02 0.1.3 新增了对h1、h2、h3的悬浮支持
@@ -39,7 +40,7 @@ GM_addStyle(`
                 } else {
                     window.$$_scrollWatchFun = function(e) {
                         // float table_of_contents
-                        var tableContents = document.querySelector('div.notion-page-content .notion-table_of_contents-block');
+                        var tableContents = document.querySelector('.notion-table_of_contents-block');
                         if (tableContents) {
                             preventHeadingSticky();
                             var rect = tableContents.getBoundingClientRect();
