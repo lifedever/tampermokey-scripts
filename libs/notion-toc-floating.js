@@ -42,7 +42,6 @@ GM_addStyle(`
                     window.$$_scrollWatchFun = function(e) {
                         // float table_of_contents
                         var tableContents = document.querySelector('.notion-table_of_contents-block');
-                        console.log(tableContents)
                         if (tableContents) {
                             preventHeadingSticky();
                             var rect = tableContents.getBoundingClientRect();
