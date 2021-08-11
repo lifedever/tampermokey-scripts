@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         Notion TOC Floating | 悬浮目录 | 悬浮Heading
 // @namespace    https://github.com/gefangshuai/tampermokey-scripts
-// @version      0.1.6
+// @version      0.1.7
 // @description  默认取第一个table of contents，请知晓。支持悬浮目录和悬浮Heading！
 // @author       Timothy.Ge
 // @include      *://*.notion.*/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        GM_addStyle
+// @note         21-08-11 0.1.17 兼容新站点
 // @note         21-08-11 0.1.16 兼容新站点
 // @note         21-06-02 0.1.5 优化Sticky Heading逻辑，当页面包含多列的时候，禁用悬浮
 // @note         21-06-02 0.1.4 优化了悬浮逻辑，增加了table_of_contents激活效果
@@ -41,6 +42,7 @@ GM_addStyle(`
                     window.$$_scrollWatchFun = function(e) {
                         // float table_of_contents
                         var tableContents = document.querySelector('.notion-table_of_contents-block');
+                        console.log(tableContents)
                         if (tableContents) {
                             preventHeadingSticky();
                             var rect = tableContents.getBoundingClientRect();
@@ -55,14 +57,14 @@ GM_addStyle(`
                                     dom.style.top = null;
                                 }
                             }
-                        } else if (document.querySelectorAll('div.notion-page-content .notion-column-block').length > 0) {
+                        } else if (document.querySelectorAll('.notion-column-block').length > 0) {
                             preventHeadingSticky();
                         } else {
                             document.querySelector('div.notion-frame').classList.remove('prevent-heading-sticky');
                         }
                         if (tableContents) {
                             // add hover style to table_of_contents
-                            var headers = document.querySelectorAll('div.notion-page-content .notion-header-block, div.notion-page-content .notion-sub_header-block, div.notion-page-content .notion-sub_sub_header-block');
+                            var headers = document.querySelectorAll('.notion-header-block, .notion-sub_header-block, .notion-sub_sub_header-block');
                             var current;
                             var currentIndex = -1;
                             if (headers && headers.length > 0) {
@@ -106,7 +108,7 @@ GM_addStyle(`
             }
             setTimeout(function() {
                 doSomething();
-            }, 1000);
+            }, 3000);
             return pushState.apply(history, arguments);
         };
     })(window.history);
